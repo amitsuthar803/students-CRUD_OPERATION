@@ -188,7 +188,6 @@ form div select {
   padding: 20px;
   color: black;
   z-index: 10;
-  width: 550px;
   max-width: 80%;
 }
 
@@ -283,6 +282,20 @@ form div select {
     font-weight: 600;
     font-size: 14px;
     text-align: left;
+  }
+
+  .edit {
+    width: 100%;
+  }
+
+  .modal {
+    max-width: 100%;
+    top: 40%;
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 20px;
   }
 }
 
