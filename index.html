@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management</title>
+  </head>
+  <body>
+    <header>
+      <h2 class="logo">Student_shell</h2>
+
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a data-modal-target=".modal" class="manage-btn" href="#"
+              >Create New Student</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <h2 class="heading">Student Management System</h2>
+
+    <main>
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Sr.</th>
+              <th>Name</th>
+              <th>Father Name</th>
+              <th>Class</th>
+              <th>Mobile no</th>
+              <th>Address</th>
+              <th class="action show">Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Create Student</div>
+        <button data-close-button class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="create-form" action="#">
+          <div>
+            <label for="name">Name :</label>
+            <input required id="name" type="text" />
+          </div>
+          <div>
+            <label for="class">Class :</label>
+            <select required id="class" type="text">
+              <option selected value="">Please Select Class</option>
+              <option value="12">12</option>
+              <option value="11">11</option>
+              <option value="10">10</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+          <div>
+            <label for="fathername">Father's Name :</label>
+            <input required id="fathername" type="text" />
+          </div>
+          <div>
+            <label for="mobileNumber">Mobile No :</label>
+            <input required id="mobileNumber" type="text" />
+          </div>
+          <div>
+            <label for="address">Address :</label>
+            <input required id="address" type="text" />
+          </div>
+          <button type="submit" class="create-btn">Create Student</button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

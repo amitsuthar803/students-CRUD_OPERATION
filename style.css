@@ -1,0 +1,303 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: Roboto;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  height: 3rem;
+  font-family: Clash Display;
+  background-color: teal;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar li a:hover {
+  color: white;
+  transition: all 0.2s;
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #222;
+}
+
+.heading {
+  color: teal;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+main {
+  margin: 0 auto;
+}
+
+.table-container {
+  padding: 0 10%;
+}
+
+.heading {
+  font-size: 40px;
+  text-align: center;
+  color: #333;
+  margin: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: teal;
+}
+
+.table thead tr th {
+  font-size: 14px;
+  font-weight: 600px;
+  letter-spacing: 0.35px;
+  color: white;
+  opacity: 1;
+  padding: 5px;
+  vertical-align: top;
+  border: 1px solid white;
+}
+
+.table tbody tr td {
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  text-align: center;
+  font-weight: normal;
+  color: #333;
+  background-color: rgb(235, 235, 235);
+  padding: 8px;
+  border: 1px solid white;
+}
+
+.table .text_open {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.35px;
+  color: teal;
+}
+
+.table tbody tr td .btn {
+  text-decoration: none;
+  padding: 3px;
+  display: inline-block;
+  color: white;
+  font-weight: medium;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 14px;
+  opacity: 1;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove-student {
+  background-color: red;
+}
+
+.edit-student {
+  background-color: blue;
+}
+
+.save-btn {
+  background-color: teal;
+}
+
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-body form div {
+  display: flex;
+  gap: 30px;
+}
+
+form div label {
+  white-space: nowrap;
+  width: 300px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+form div input,
+select {
+  width: 100%;
+  padding: 5px;
+}
+
+form div select {
+  cursor: pointer;
+}
+.create-btn {
+  background-color: teal;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 600;
+  width: 100%;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.create-btn:hover {
+  background-color: rgb(1, 148, 148);
+}
+
+.create-btn:active {
+  background-color: rgb(148, 1, 123);
+  font-size: 15px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  color: black;
+  z-index: 10;
+  width: 550px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header .title {
+  text-transform: uppercase;
+  color: teal;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.close-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: gray;
+}
+
+.overlay {
+  position: fixed;
+  transition: 200ms ease-in-out;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.overlay.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.edit {
+  text-align: center;
+  border: none;
+  background: #cfcdcd;
+}
+
+/* Media Queries */
+/* small devices (landscape phones, 576px and up) */
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbdoy,
+  .table tr,
+  .table td {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 15px;
+  }
+
+  .table tbody tr td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    /* width: 50%; */
+    padding-left: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (Desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
